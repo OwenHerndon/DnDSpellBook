@@ -21,7 +21,7 @@ namespace DnDSpellBook.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Spellbook", throwIfV1Schema: false)
         {
         }
         

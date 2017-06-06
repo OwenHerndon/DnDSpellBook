@@ -1,4 +1,5 @@
 ﻿app.controller("loginController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
+
     $scope.login = function () {
         $http({
             method: 'POST',

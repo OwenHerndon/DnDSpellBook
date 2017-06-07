@@ -1,10 +1,18 @@
-﻿<div ng-controller="spellbookController">
+﻿<div>
     <div>
-        <select ng-model="selectedClass" ng-options="x for x in classes"></select>
+        <select ng-model="selectedClass" ng-options="x for x in classes">
+            <option value='' disabled selected>Please Choose a Class</option>
+        </select>
     </div>
 
     <div>
-        <select ng-model="selectedLevel" ng-options="x for x in levels"></select>
+        <select ng-model="selectedLevel" ng-options="x for x in levels">
+            <option value='' disabled selected>Please Choose a Spell Level</option>
+        </select>
+    </div>
+
+    <div>
+        <button ng-click="getSpells(selectedClass, selectedLevel)">Get Spells!</button>
     </div>
 
     <div ng-repeat="spell in spells" class="col s4 flow-text">

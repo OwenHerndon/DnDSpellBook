@@ -1,17 +1,26 @@
-﻿<div>
-    <select>
-        <option value="Barbarian">Barbarian</option>
-        <option value="Bard">Bard</option>
-        <option value="Monk">Monk</option>
-        <option value="Paladin">Paladin</option>
-    </select>
-</div>
+﻿<div ng-controller="spellbookController">
+    <div>
+        <select ng-model="selectedClass" ng-options="x for x in classes"></select>
+    </div>
 
-<div>
-    <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
+    <div>
+        <select ng-model="selectedLevel" ng-options="x for x in levels"></select>
+    </div>
+
+    <div ng-repeat="spell in spells" class="col s4 flow-text">
+        <div class="card">
+            <div>{{spell.name}}</div>
+            <div>{{spell.desc}}</div>
+            <div>{{spell.higher_level}}</div>
+            <div>{{spell.page}}</div>
+            <div>{{spell.range}}</div>
+            <div>{{spell.components}}</div>
+            <div>{{spell.material}}</div>
+            <div>{{spell.ritual}}</div>
+            <div>{{spell.duration}}</div>
+            <div>{{spell.concentration}}</div>
+            <div>{{spell.casting_time}}</div>
+            <div>{{spell.school}}</div>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,6 @@
 ﻿app.factory("SpellFactory", function ($q, $http, $rootScope) {
-
-    let getSpells = (selectedClass, selectedLevel) => {
+    console.log("poop");
+    let getSpellsFromAPI = (selectedClass, selectedLevel) => {
         return $q((resolve, reject) => {
             $http.get(`http://www.dnd5eapi.co/api/spells/${selectedClass}/level/${selectedLevel}`)
 			.success(function (spellsObject) {

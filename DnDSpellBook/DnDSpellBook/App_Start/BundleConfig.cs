@@ -27,7 +27,9 @@ namespace DnDSpellBook
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
-                "~/app/app.js")
+                "~/app/app.js",
+                "~/app/Factory/SpellFactory.js",
+                "~/app/Controllers/spellbookController")
                 .IncludeDirectory("~/app", "*.js", true));
         }
     }

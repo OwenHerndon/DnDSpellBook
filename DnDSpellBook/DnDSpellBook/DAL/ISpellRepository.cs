@@ -9,6 +9,6 @@ namespace DnDSpellBook.DAL
 {
     public interface ISpellRepository
     {
-        IEnumerable<Spell> GetSpells(string selectedClass, string selectedLevel);
+        IEnumerable<SpellList> GetSpells(string selectedClass, string selectedLevel);
     }
 }

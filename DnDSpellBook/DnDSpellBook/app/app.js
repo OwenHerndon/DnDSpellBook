@@ -25,7 +25,7 @@ app.config([
             });
 
     }
-])
+]);
 
 app.run(["$http", function ($http) {
 

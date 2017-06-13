@@ -22,7 +22,13 @@ namespace DnDSpellBook
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/materialize.min.css",
+                      "~/Content/materialize.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/materialize").Include(
+                "~/Content/materialize.js",
+                "~/Content/materialize.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js",

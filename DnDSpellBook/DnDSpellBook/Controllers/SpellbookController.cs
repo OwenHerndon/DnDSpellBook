@@ -26,7 +26,7 @@ namespace DnDSpellBook.Controllers
         }
 
         [Route("api/spells/{selectedClass}/{selectedLevel}")]
-        public IEnumerable<SpellList> GetSpells(string selectedClass, string selectedLevel)
+        public IEnumerable<Result> GetSpells(string selectedClass, string selectedLevel)
         {
             return _spellRepository.GetSpells(selectedClass, selectedLevel);
         }

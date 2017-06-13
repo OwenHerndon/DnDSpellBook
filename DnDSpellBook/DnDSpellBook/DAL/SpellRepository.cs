@@ -13,7 +13,7 @@ namespace DnDSpellBook.DAL
     public class SpellRepository : ISpellRepository
     {
 
-        public IEnumerable<SpellList> GetSpells(string selectedClass, string selectedLevel)
+        public IEnumerable<Result> GetSpells(string selectedClass, string selectedLevel)
         {
             var client = new RestClient("http://www.dnd5eapi.co/api/");
             var request = new RestRequest($"/spells/{selectedClass}/level/{selectedLevel}");
@@ -30,19 +30,22 @@ namespace DnDSpellBook.DAL
 
             SpellList parseData = JsonConvert.DeserializeObject<SpellList>(restResponse.Content, settings);
 
-            yield return parseData;
+            //yield return parseData;
 
-            //foreach (var spell in parseData)
-            //{
-            //    var s = new Result
-            //    {
-            //        name = spell.name,
-            //        url = spell.url
-            //    };
+            foreach (var spell in parseData.results)
+            {
+                var s = new Result
+                {
+                    //count = spell.count,
+                    //results = spell.results
+                    name = spell.name,
+                    url = spell.url
+                };
 
-            //    yield return s;
-            //    }
+                yield return s;
             }
+
+        }
 
         //public class SpellList
         //{

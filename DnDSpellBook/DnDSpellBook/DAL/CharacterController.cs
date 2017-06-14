@@ -5,7 +5,8 @@ using System.Web;
 
 namespace DnDSpellBook.DAL
 {
-    public class CharacterController
+    public class CharacterController : ICharacterController
     {
+
     }
 }

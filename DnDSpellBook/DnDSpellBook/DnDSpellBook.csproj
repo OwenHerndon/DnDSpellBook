@@ -243,7 +243,9 @@
     <Compile Include="Controllers\AddCharacterController.cs" />
     <Compile Include="Controllers\SpellbookController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\CharacterController.cs" />
     <Compile Include="DAL\IAddCharacterRepository.cs" />
+    <Compile Include="DAL\ICharacterController.cs" />
     <Compile Include="DAL\ISpellRepository.cs" />
     <Compile Include="DAL\AddCharacterRepository.cs" />
     <Compile Include="DAL\SpellRepository.cs" />

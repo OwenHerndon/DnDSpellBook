@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Collections.Generic;
 
 namespace DnDSpellBook.Models
 {
@@ -20,6 +21,7 @@ namespace DnDSpellBook.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public List<Character> Characters { get; set; }
 
         public ApplicationDbContext()
             : base("Spellbook", throwIfV1Schema: false)

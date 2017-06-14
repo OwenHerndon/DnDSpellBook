@@ -1,6 +1,8 @@
 ﻿
 <div>
-    <select ng-model="selectedCharacter" ng-options="x for x in characters"></select>
+    <select class='dropdown-button btn red darken-4' ng-model="selectedCharacter" ng-options="x for x in characters">
+        <option value='' disabled selected>Please Choose a Character</option>
+    </select>
 </div>
 
 <div>

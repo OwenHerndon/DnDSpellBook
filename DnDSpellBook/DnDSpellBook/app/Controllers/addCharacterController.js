@@ -1,4 +1,5 @@
 ﻿app.controller("addCharacterController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
+
     $scope.values = [];
     $scope.newCharacterName = "";
 
@@ -13,11 +14,11 @@
                     str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
                 return str.join("&");
             },
-            data: { name: $scope.newCharacterName}
+            data: { name: $scope.newCharacterName }
         })
             .then(function (result) {
                 console.log("result=", result);
                 $location.path("/character");
             });
-    }
+    };
 }]);

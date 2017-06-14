@@ -23,6 +23,11 @@ app.config([
                 templateUrl: "app/Partials/Character.html",
                 controller: "characterController"
             })
+            .when("/add",
+            {
+                templateUrl: "app/Partials/AddCharacter.html",
+                controller: "addCharacterController"
+            })
             .when("/signup",
             {
                 templateUrl: "app/Partials/SignUp.html",

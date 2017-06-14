@@ -8,15 +8,29 @@
 
     $scope.spells = [];
 
+    $scope.spelldetail = {};
 
     $scope.getSpells = function (selectedClass, selectedLevel) {
 
         $http.get(`/api/spells/${selectedClass}/${selectedLevel}`)
             .then(function (result) {
                 $scope.spells = result.data;
-                console.log($scope.spells);
+                console.log("spells",$scope.spells);
                 console.log(result);
             });
+    };
+
+    $scope.spellDetail = function (spellurl) {
+        
+        spellurl = encodeURIComponent(spellurl);
+        console.log("url passed in", spellurl);
+        $http.get(`/api/spells/?spellurl=${spellurl}`)
+           .then(function (result) {
+               $scope.spelldetail = result.data;
+               console.log("spelldetail", $scope.spelldetail);
+               console.log(result);
+           });
+
     };
 
 }]);

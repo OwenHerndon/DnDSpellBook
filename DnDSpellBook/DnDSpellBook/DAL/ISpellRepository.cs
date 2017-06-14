@@ -10,5 +10,7 @@ namespace DnDSpellBook.DAL
     public interface ISpellRepository
     {
         IEnumerable<Result> GetSpells(string selectedClass, string selectedLevel);
+
+        Spell GetSpellDetails(string spellurl);
     }
 }

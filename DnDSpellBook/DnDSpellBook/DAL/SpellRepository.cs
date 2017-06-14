@@ -12,6 +12,39 @@ namespace DnDSpellBook.DAL
 {
     public class SpellRepository : ISpellRepository
     {
+        public Spell GetSpellDetails(string spellurl)
+        {
+            var uri = new Uri(spellurl);
+
+            var client = new RestClient(spellurl);
+            var request = new RestRequest("");
+            var restResponse = client.Get(request);
+
+            //if (restResponse.StatusCode == HttpStatusCode.OK) yield return null;
+
+            var settings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+                MissingMemberHandling = MissingMemberHandling.Ignore
+            };
+
+            Spell spellDetailData = JsonConvert.DeserializeObject<Spell>(restResponse.Content, settings);
+
+            return spellDetailData;
+
+            //foreach (var spelldetail in spellDetailData)
+            //{
+            //    var s = new Result
+            //    {
+            //        //count = spell.count,
+            //        //results = spell.results
+            //        name = spell.name,
+            //        url = spell.url
+            //    };
+
+            //    yield return s;
+            //}
+        }
 
         public IEnumerable<Result> GetSpells(string selectedClass, string selectedLevel)
         {
@@ -47,10 +80,6 @@ namespace DnDSpellBook.DAL
 
         }
 
-        //public class SpellList
-        //{
-        //    public List<Spell> Spells { get; set; }
-        //}
 
         public class ApiSpell
         {
@@ -65,26 +94,5 @@ namespace DnDSpellBook.DAL
             public string CastTime { get; set; }
             public int Level { get; set; }
         }
-
-        //public class Result
-        //{
-        //    public string name { get; set; }
-        //    public string url { get; set; }
-        //}
-
-        //public class SpellList
-        //{
-        //    public int count { get; set; }
-        //    public List<Result> results { get; set; }
-        //}
-
-        //        Description = spell.Description,
-        //        HigherLevel = spell.HigherLevel,
-        //        Range = spell.Range,
-        //        Components = spell.Components,
-        //        Material = spell.Material,
-        //        Ritual = spell.Ritual,
-        //        CastTime = spell.CastTime,
-        //        Level = spell.Level
     }
 }

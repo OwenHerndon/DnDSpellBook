@@ -10,14 +10,40 @@ namespace DnDSpellBook.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string HigherLevel { get; set; }
-        public int Range { get; set; }
-        public List<string> Components { get; set; }
-        public string Material { get; set; }
-        public string Ritual { get; set; }
-        public string CastTime { get; set; }
-        public int Level { get; set; }
+        public string _id { get; set; }
+        public string index { get; set; }
+        public string name { get; set; }
+        public List<string> desc { get; set; }
+        public string page { get; set; }
+        public string range { get; set; }
+        public List<string> components { get; set; }
+        public string material { get; set; }
+        public string ritual { get; set; }
+        public string duration { get; set; }
+        public string concentration { get; set; }
+        public string casting_time { get; set; }
+        public string level { get; set; }
+        public School school { get; set; }
+        public List<Class> classes { get; set; }
+        public List<Subclass> subclasses { get; set; }
+        public string url { get; set; }
+    }
+
+    public class School
+    {
+        public string url { get; set; }
+        public string name { get; set; }
+    }
+
+    public class Class
+    {
+        public string name { get; set; }
+        public string url { get; set; }
+    }
+
+    public class Subclass
+    {
+        public string url { get; set; }
+        public string name { get; set; }
     }
 }

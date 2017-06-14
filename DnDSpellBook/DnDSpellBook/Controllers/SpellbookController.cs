@@ -31,5 +31,11 @@ namespace DnDSpellBook.Controllers
             return _spellRepository.GetSpells(selectedClass, selectedLevel);
         }
 
+        [Route("api/spells/")]
+        public Spell GetSpellsDetails(string spellurl)
+        {
+            return _spellRepository.GetSpellDetails(spellurl);
+        }
+
     }
 }

@@ -11,13 +11,34 @@
         </select>
     </div>
 
+
     <div>
         <button class="btn btn-primary btn-lg col-xs-2 red darken-4" ng-click="getSpells(selectedClass, selectedLevel)">Get Spells!</button>
     </div>
 
+    <div ng-model="spelldetail" class="col s4 flow-text">
+        <div class="card">
+            <div>{{spelldetail.name}}</div>
+            <div>{{spelldetail.desc}}</div>
+            <div>{{spelldetail.higher_level}}</div>
+            <div>{{spelldetail.page}}</div>
+            <div>{{spelldetail.range}}</div>
+            <div>{{spelldetail.components}}</div>
+            <div>{{spelldetail.material}}</div>
+            <div>{{spelldetail.ritual}}</div>
+            <div>{{spelldetail.duration}}</div>
+            <div>{{spelldetail.concentration}}</div>
+            <div>{{spelldetail.casting_time}}</div>
+            <div>{{spelldetial.school}}</div>
+        </div>
+    </div>
+
     <div ng-repeat="spell in spells" class="col s4 flow-text">
         <div class="card">
-            <div>{{spell.name}}</div>
+            <div>{{spell.name}}
+                <button class="btn btn-primary btn-sm col-xs-2 red darken-4" ng-click="spellDetail(spell.url)">Detail</button>
+               
+            </div>
         </div>
     </div>
 </div>

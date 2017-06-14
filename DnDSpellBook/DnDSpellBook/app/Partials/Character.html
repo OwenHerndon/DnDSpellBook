@@ -7,7 +7,7 @@
     <h1>Spells</h1>
     <div ng-repeat="spell in spells" class="col s4 flow-text">
         <div class="card">
-            <div>{{spell.name}}</div>
+            <div ng-click="spellDetail(spell.url)">{{spell.name}}</div>
         </div>
     </div>
 </div>

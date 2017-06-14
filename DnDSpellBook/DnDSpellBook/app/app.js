@@ -13,6 +13,11 @@ app.config([
                 templateUrl: "app/Partials/Spellbook.html",
                 controller: "spellbookController"
             })
+            .when("/spelldetail",
+            {
+                templateUrl: "app/Partials/spelldetail.html",
+                controller: "spellbookController"
+            })
             .when("/character",
             {
                 templateUrl: "app/Partials/Character.html",

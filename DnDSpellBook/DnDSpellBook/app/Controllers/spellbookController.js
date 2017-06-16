@@ -10,6 +10,8 @@
 
     $scope.spelldetail = {};
 
+    $scope.selectedCharacter = []
+
     $scope.getSpells = function (selectedClass, selectedLevel) {
 
         $http.get(`/api/spells/${selectedClass}/${selectedLevel}`)
@@ -31,6 +33,24 @@
                console.log(result);
            });
 
+    };
+
+
+    $scope.addSpellToCharacter = function (selectedCharacter, spelldetail) {
+        $http.post("/api/spells/addspelltocharacter", { name: $scope.newCharacterName })
+            .then(function (result) {
+                console.log("result=", result);
+                $location.path("/spellbook");
+            });
+    };
+
+    $scope.getCharacters = function () {
+        $http.get(`/api/characters`)
+            .then(function (result) {
+                $scope.characters = result.data;
+                console.log("characters", $scope.characters);
+                console.log(result);
+            });
     };
 
 }]);

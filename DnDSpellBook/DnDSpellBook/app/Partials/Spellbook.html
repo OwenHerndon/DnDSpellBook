@@ -30,6 +30,14 @@
             <div>{{spelldetail.concentration}}</div>
             <div>{{spelldetail.casting_time}}</div>
             <div>{{spelldetial.school}}</div>
+            <div>
+                <select class='dropdown-button btn red darken-4' ng-model="selectedCharacter" ng-options="x for x in characters">
+                    <option value='' disabled selected>Please Choose a Character</option>
+                </select>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg col-xs-2 red darken-4" ng-click="addSpellToCharacter(selectedCharacter, spelldetail)">Get Spells!</button>
+            </div>
         </div>
     </div>
 

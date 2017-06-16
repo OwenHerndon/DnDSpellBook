@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace DnDSpellBook.Models
 {
@@ -21,8 +22,11 @@ namespace DnDSpellBook.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public List<Character> Characters { get; set; }
+        public virtual DbSet<List<Character>> Characters { get; set; }
 
+        public virtual DbSet<Spell> Spells { get; set; }
+
+        public virtual DbSet<SpellList> SpellLists { get; set; }
         public ApplicationDbContext()
             : base("Spellbook", throwIfV1Schema: false)
         {

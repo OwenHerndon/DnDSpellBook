@@ -11,13 +11,7 @@ namespace DnDSpellBook.Controllers
 {
     public class CharacterController : ApiController
     {
-        //gets list of characters of logged in user
         readonly ICharacterRepository _characterRepository;
-
-        //public CharacterController()
-        //{
-        //    _characterRepository = new CharacterRepository();
-        //}
 
         public CharacterController(ICharacterRepository CharacterRepository)
         {
@@ -35,6 +29,12 @@ namespace DnDSpellBook.Controllers
         public IEnumerable<Spell> GetSpells()
         {
             return _characterRepository.GetCharactersSpells();
+        }
+
+        [HttpDelete, Route("api/character/delete/{selectedCharacterId}")]
+        public void DeleteCharacter(int selectedCharacterId)
+        {
+            _characterRepository.DeleteCharacter(selectedCharacterId);
         }
         
         //deletes spell from list

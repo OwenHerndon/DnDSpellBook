@@ -6,6 +6,10 @@
 
     $scope.spelldetail = {};
 
+    $scope.selectedCharacter = {};
+
+   
+    
     //gets list of characters
     $scope.getCharacters = function () {
         $http.get(`/api/characters`)
@@ -15,6 +19,8 @@
                 console.log(result);
             });
     };
+
+    $scope.getCharacters();
 
     //get character spells?
     $scope.getCharactersSpells = function () {
@@ -39,4 +45,8 @@
 
     };
 
+    $scope.deleteCharacter = function (selectedCharacterId) {
+        console.log("SelectedcharId", selectedCharacterId);
+        $http.delete(`/api/character/delete/${selectedCharacterId}`);
+    };
 }]);

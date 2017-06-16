@@ -34,12 +34,13 @@
                     <div>{{spelldetail.casting_time}}</div>
                     <div>{{spelldetial.school}}</div>
                     <div class="card-action">
-                        <select class='dropdown-button btn red darken-4' ng-model="selectedCharacter" ng-options="x for x in characters">
+                        <select class='dropdown-button btn red darken-4' ng-model="selectedCharacter">
                             <option value='' disabled selected>Please Choose a Character</option>
+                            <option ng-repeat="character in characters" value="{{character.Name}}">{{character.Name}}</option>
                         </select>
                     </div>
                     <div class="card-action">
-                        <button class="btn btn-primary btn-lg col-xs-2 red darken-4" ng-click="addSpellToCharacter(selectedCharacter, spelldetail)">Get Spells!</button>
+                        <button class="btn btn-primary btn-lg red darken-4" ng-click="addSpellToCharacter(selectedCharacter, spelldetail)">Add spell to {{selectedCharacter}}</button>
                     </div>
                 </div>
             </div>

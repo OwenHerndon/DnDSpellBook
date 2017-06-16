@@ -17,12 +17,19 @@ namespace DnDSpellBook.DAL
 
         public IEnumerable<Character> GetCharacters()
         {
-            throw new NotImplementedException();
+            return _context.Characters;
         }
 
         public IEnumerable<Spell> GetCharactersSpells()
         {
             throw new NotImplementedException();
+        }
+        
+        public void DeleteCharacter(int Id)
+        {
+            _context.Characters.Remove(_context.Characters.Find(Id));
+            _context.SaveChanges();
+
         }
     }
 }

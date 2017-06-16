@@ -1,12 +1,19 @@
 ﻿
 <div>
-    <select class='dropdown-button btn red darken-4' ng-model="selectedCharacter" ng-options="x for x in characters">
+    <select class='dropdown-button btn red darken-4' ng-model="selectedCharacter">
         <option value='' disabled selected>Please Choose a Character</option>
+        <option ng-repeat="character in characters" value="{{character.Id}}">{{character.Name}}</option>
     </select>
 </div>
 
 <div>
-    <button class="btn btn-primary btn-lg col-xs-2 red darken-4" ng-click="getSpells()">Get {{selectedCharacter}}'s Spells!</button>
+    <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="deleteCharacter(selectedCharacter)">Delete {{character.Name}}</button>
+    <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="addNew()">Add new character</button>
+</div>
+
+
+<div>
+    <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="getSpells()">Get {{character.Name}} Spells!</button>
 </div>
 
 <div ng-model="spelldetail" class="col s4 flow-text">

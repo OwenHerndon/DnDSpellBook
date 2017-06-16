@@ -12,5 +12,7 @@ namespace DnDSpellBook.DAL
         IEnumerable<Character> GetCharacters();
 
         IEnumerable<Spell> GetCharactersSpells();
+
+        void DeleteCharacter(int Id);
     }
 }

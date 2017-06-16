@@ -22,7 +22,7 @@ namespace DnDSpellBook.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public virtual DbSet<List<Character>> Characters { get; set; }
+        public virtual DbSet<Character> Characters { get; set; }
 
         public virtual DbSet<Spell> Spells { get; set; }
 

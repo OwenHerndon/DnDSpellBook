@@ -31,18 +31,24 @@ namespace DnDSpellBook.Models
 
     public class School
     {
+        [Key]
+        public int Id { get; set; }
         public string url { get; set; }
         public string name { get; set; }
     }
 
     public class Class
     {
+        [Key]
+        public int Id { get; set; }
         public string name { get; set; }
         public string url { get; set; }
     }
 
     public class Subclass
     {
+        [Key]
+        public int Id { get; set; }
         public string url { get; set; }
         public string name { get; set; }
     }

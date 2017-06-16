@@ -11,13 +11,9 @@ namespace DnDSpellBook.Controllers
 {
     public class AddCharacterController : ApiController
     {
-        //post route to db from repo
-        readonly IAddCharacterRepository _addCharacterRepository;
 
-        //public AddCharacterController()
-        //{
-        //    _addCharacterRepository = new AddCharacterRepository();
-        //}
+
+        readonly IAddCharacterRepository _addCharacterRepository;
 
         public AddCharacterController(IAddCharacterRepository addCharacterRepository)
         {
@@ -32,7 +28,7 @@ namespace DnDSpellBook.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid Name");
             }
 
-            _addCharacterRepository.Save(character);
+            _addCharacterRepository.AddNewCharacter(character);
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }

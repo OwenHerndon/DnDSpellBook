@@ -12,29 +12,29 @@ namespace DnDSpellBook.Controllers
     public class CharacterController : ApiController
     {
         //gets list of characters of logged in user
-        readonly ICharacterRepository _CharacterRepository;
+        readonly ICharacterRepository _characterRepository;
 
         //public CharacterController()
         //{
-        //    _CharacterRepository = new CharacterRepository();
+        //    _characterRepository = new CharacterRepository();
         //}
 
         public CharacterController(ICharacterRepository CharacterRepository)
         {
-            _CharacterRepository = CharacterRepository;
+            _characterRepository = CharacterRepository;
         }
 
         [HttpGet, Route("api/characters")]
         public IEnumerable<Character> GetCharacters()
         {
-            return _CharacterRepository.GetCharacters();
+            return _characterRepository.GetCharacters();
         }
 
         //gets spells list of selected character
         [HttpGet, Route("api/characters/spells")]
         public IEnumerable<Spell> GetSpells()
         {
-            return _CharacterRepository.GetCharactersSpells();
+            return _characterRepository.GetCharactersSpells();
         }
         
         //deletes spell from list

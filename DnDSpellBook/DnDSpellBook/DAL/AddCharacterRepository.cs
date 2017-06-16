@@ -10,19 +10,32 @@ namespace DnDSpellBook.DAL
 {
     public class AddCharacterRepository : IAddCharacterRepository
     {
-            readonly IDbConnection _dbConnection;
+        readonly ApplicationDbContext _context;
 
-            public AddCharacterRepository(IDbConnection connection)
-            {
-                _dbConnection = connection;
-            }
-
-            public void Save(Character newCharacter)
-            {
-                var sql = @"Insert into Character(Name)
-                        Values(@Name)";
-
-                _dbConnection.Execute(sql, newCharacter);
-            }
+        public AddCharacterRepository(ApplicationDbContext connection)
+        {
+            _context = connection;
         }
+
+        public void AddNewCharacter(Character newcharacter)
+        {
+            _context.Characters.Add(newcharacter);
+            _context.SaveChanges();
+        }
+
+        //readonly IDbConnection _dbConnection;
+
+        //public AddCharacterRepository(IDbConnection connection)
+        //{
+        //    _dbConnection = connection;
+        //}
+
+        //public void Save(Character newCharacter)
+        //{
+        //    var sql = @"Insert into Character(Name)
+        //            Values(@Name)";
+
+        //    _dbConnection.Execute(sql, newCharacter);
+        //}
+    }
 }

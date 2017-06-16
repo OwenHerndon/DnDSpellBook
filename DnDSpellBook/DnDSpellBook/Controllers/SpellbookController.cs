@@ -19,7 +19,6 @@ namespace DnDSpellBook.Controllers
             _spellRepository = new SpellRepository();
         }
 
-
         public SpellbookController(ISpellRepository spellRepository)
         {
             _spellRepository = spellRepository;
@@ -35,6 +34,13 @@ namespace DnDSpellBook.Controllers
         public Spell GetSpellsDetails(string spellurl)
         {
             return _spellRepository.GetSpellDetails(spellurl);
+        }
+
+        //
+        [Route("api/spells/addspelltocharacter")]
+        public void PostSpellToCharacter(string spellurl)
+        {
+            //_spellRepository.AddSpellToCharacter(spellurl);
         }
 
     }

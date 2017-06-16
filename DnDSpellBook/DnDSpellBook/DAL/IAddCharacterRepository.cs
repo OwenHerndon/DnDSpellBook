@@ -9,6 +9,6 @@ namespace DnDSpellBook.DAL
 {
     public interface IAddCharacterRepository
     {
-        void Save(Character newCharacter);
+        void AddNewCharacter(Character newcharacter);
     }
 }

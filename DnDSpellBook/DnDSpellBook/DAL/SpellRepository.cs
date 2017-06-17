@@ -12,6 +12,19 @@ namespace DnDSpellBook.DAL
 {
     public class SpellRepository : ISpellRepository
     {
+        readonly ApplicationDbContext _context;
+
+        public SpellRepository(ApplicationDbContext connection)
+        {
+            _context = connection;
+        }
+
+        public void AddSpellToCharacter(Spell characterSpell)
+        {
+            _context.Spells.Add(characterSpell);
+            _context.SaveChanges();
+        }
+
         public Spell GetSpellDetails(string spellurl)
         {
             var uri = new Uri(spellurl);
@@ -31,19 +44,6 @@ namespace DnDSpellBook.DAL
             Spell spellDetailData = JsonConvert.DeserializeObject<Spell>(restResponse.Content, settings);
 
             return spellDetailData;
-
-            //foreach (var spelldetail in spellDetailData)
-            //{
-            //    var s = new Result
-            //    {
-            //        //count = spell.count,
-            //        //results = spell.results
-            //        name = spell.name,
-            //        url = spell.url
-            //    };
-
-            //    yield return s;
-            //}
         }
 
         public IEnumerable<Result> GetSpells(string selectedClass, string selectedLevel)
@@ -79,6 +79,7 @@ namespace DnDSpellBook.DAL
             }
 
         }
+
 
 
         public class ApiSpell

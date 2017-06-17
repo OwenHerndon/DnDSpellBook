@@ -10,7 +10,7 @@
 
     $scope.spelldetail = {};
 
-    $scope.selectedCharacter = []
+    $scope.selectedCharacter = [];
 
     $scope.getSpells = function (selectedClass, selectedLevel) {
 
@@ -37,11 +37,12 @@
 
 
     $scope.addSpellToCharacter = function (selectedCharacter, spelldetail) {
-        $http.post("/api/spells/addspelltocharacter", { name: $scope.newCharacterName })
-            .then(function (result) {
-                console.log("result=", result);
-                $location.path("/spellbook");
-            });
+        console.log("Selected character Id to DB", selectedCharacter);
+        console.log("Spell object to be added to DB", spelldetail);
+        //$http.post("/api/spells/addspelltocharacter",
+        //    {
+                
+        //    })
     };
 
     $scope.getCharacters = function () {

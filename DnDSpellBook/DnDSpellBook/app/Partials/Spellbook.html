@@ -36,11 +36,11 @@
                     <div class="card-action">
                         <select class='dropdown-button btn red darken-4' ng-model="selectedCharacter">
                             <option value='' disabled selected>Please Choose a Character</option>
-                            <option ng-repeat="character in characters" value="{{character.Name}}">{{character.Name}}</option>
+                            <option ng-repeat="character in characters" value="{{character.Id}}">{{character.Name}}</option>
                         </select>
                     </div>
                     <div class="card-action">
-                        <button class="btn btn-primary btn-lg red darken-4" ng-click="addSpellToCharacter(selectedCharacter, spelldetail)">Add spell to {{selectedCharacter}}</button>
+                        <button class="btn btn-primary btn-lg red darken-4" ng-click="addSpellToCharacter(selectedCharacter, spelldetail)">Add spell</button>
                     </div>
                 </div>
             </div>

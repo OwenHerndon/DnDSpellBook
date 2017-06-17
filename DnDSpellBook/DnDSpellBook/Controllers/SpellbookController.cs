@@ -36,11 +36,11 @@ namespace DnDSpellBook.Controllers
             return _spellRepository.GetSpellDetails(spellurl);
         }
 
-        //
+
         [Route("api/spells/addspelltocharacter")]
-        public void PostSpellToCharacter(string spellurl)
+        public void PostSpellToCharacter(Spell spell)
         {
-            //_spellRepository.AddSpellToCharacter(spellurl);
+            _spellRepository.AddSpellToCharacter(spell);
         }
 
     }

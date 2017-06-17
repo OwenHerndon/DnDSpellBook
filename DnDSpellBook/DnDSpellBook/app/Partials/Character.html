@@ -19,21 +19,21 @@
 <div>
     <div ng-repeat="charactersSpell in charactersSpells" class="col s4 flow-text">
         <div class="card">
-            <div ng-click="spellDetail(charactersSpell.url)">{{charactersSpell.name}}</div>
+            <div ng-click="spellDetail(charactersSpell)">{{charactersSpell.name}}</div>
             <div ng-model="spelldetail" class="col s4 flow-text">
                 <div class="card">
-                    <div>{{spelldetail.name}}</div>
-                    <div>{{spelldetail.desc}}</div>
-                    <div>{{spelldetail.higher_level}}</div>
-                    <div>{{spelldetail.page}}</div>
-                    <div>{{spelldetail.range}}</div>
-                    <div>{{spelldetail.components}}</div>
-                    <div>{{spelldetail.material}}</div>
-                    <div>{{spelldetail.ritual}}</div>
-                    <div>{{spelldetail.duration}}</div>
-                    <div>{{spelldetail.concentration}}</div>
-                    <div>{{spelldetail.casting_time}}</div>
-                    <div>{{spelldetial.school}}</div>
+                    <div>{{charactersSpell.spelldetail.name}}</div>
+                    <div>{{charactersSpell.spelldetail.desc}}</div>
+                    <div>{{charactersSpell.spelldetail.higher_level}}</div>
+                    <div>{{charactersSpell.spelldetail.page}}</div>
+                    <div>{{charactersSpell.spelldetail.range}}</div>
+                    <div>{{charactersSpell.spelldetail.components}}</div>
+                    <div>{{charactersSpell.spelldetail.material}}</div>
+                    <div>{{charactersSpell.spelldetail.ritual}}</div>
+                    <div>{{charactersSpell.spelldetail.duration}}</div>
+                    <div>{{charactersSpell.spelldetail.concentration}}</div>
+                    <div>{{charactersSpell.spelldetail.casting_time}}</div>
+                    <div>{{charactersSpell.spelldetial.school}}</div>
                     <div class="card-action">
                         <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="deleteSpell(spelldetail.Id)">Unlearn Spell</button>
                     </div>

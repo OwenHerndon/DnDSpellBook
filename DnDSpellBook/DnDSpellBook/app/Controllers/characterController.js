@@ -36,13 +36,13 @@
     };
 
     //gets spell detail
-    $scope.spellDetail = function (spellurl) {
-        spellurl = encodeURIComponent(spellurl);
+    $scope.spellDetail = function (characterSpell) {
+        spellurl = encodeURIComponent(characterSpell.url);
         console.log("url passed in", spellurl);
         $http.get(`/api/spells/?spellurl=${spellurl}`)
            .then(function (result) {
-               $scope.spelldetail = result.data;
-               console.log("spelldetail", $scope.spelldetail);
+               characterSpell.spelldetail = result.data;
+               console.log("spelldetail", characterSpell.spelldetail);
                console.log(result);
            });
 

@@ -1,42 +1,42 @@
 ﻿<div>
     <div class="row">
-        <div>
+        <div class="col s6">
             <select class='dropdown-button btn red darken-4' ng-model="selectedClass" ng-options="x for x in classes">
                 <option value='' disabled selected>Please Choose a Class</option>
             </select>
         </div>
 
-        <div>
+        <div class="col s2">
+            <button class="btn btn-primary btn-lg red darken-4" ng-click="getSpells(selectedClass, selectedLevel)">Spells!</button>
+        </div>
+
+        <div class="col s6">
             <select class='dropdown-button btn red darken-4' ng-model="selectedLevel" ng-options="x for x in levels">
                 <option value='' disabled selected>Please Choose a Spell Level</option>
             </select>
         </div>
     </div>
 
-    <div>
-        <button class="btn btn-primary btn-lg col-xs-2 red darken-4" ng-click="getSpells(selectedClass, selectedLevel)">Get Spells!</button>
-    </div>
-
             <div ng-repeat="spell in spells" class="col s4 flow-text">
                 <div class="card">
                     <div>
-                        <div ng-click="spellDetail(spell.url)">{{spell.name}}</div>
+                        <div ng-click="spellDetail(spell)">{{spell.name}}</div>
                         <div class="row">
-                            <div class="col s12 m6">
+                            <div class="col s8">
                                 <div class="card">
                                     <div ng-model="spelldetail">
-                                        <div>{{spelldetail.name}}</div>
-                                        <div>{{spelldetail.desc}}</div>
-                                        <div>{{spelldetail.higher_level}}</div>
-                                        <div>{{spelldetail.page}}</div>
-                                        <div>{{spelldetail.range}}</div>
-                                        <div>{{spelldetail.components}}</div>
-                                        <div>{{spelldetail.material}}</div>
-                                        <div>{{spelldetail.ritual}}</div>
-                                        <div>{{spelldetail.duration}}</div>
-                                        <div>{{spelldetail.concentration}}</div>
-                                        <div>{{spelldetail.casting_time}}</div>
-                                        <div>{{spelldetial.school}}</div>
+                                        <div>{{spell.spelldetail.name}}</div>
+                                        <div>{{spell.spelldetail.desc}}</div>
+                                        <div>{{spell.spelldetail.higher_level}}</div>
+                                        <div>{{spell.spelldetail.page}}</div>
+                                        <div>{{spell.spelldetail.range}}</div>
+                                        <div>{{spell.spelldetail.components}}</div>
+                                        <div>{{spell.spelldetail.material}}</div>
+                                        <div>{{spell.spelldetail.ritual}}</div>
+                                        <div>{{spell.spelldetail.duration}}</div>
+                                        <div>{{spell.spelldetail.concentration}}</div>
+                                        <div>{{spell.spelldetail.casting_time}}</div>
+                                        <div>{{spell.spelldetial.school}}</div>
                                         <div class="card-action">
                                             <select class='dropdown-button btn red darken-4' ng-model="selectedCharacter">
                                                 <option value='' disabled selected>Please Choose a Character</option>

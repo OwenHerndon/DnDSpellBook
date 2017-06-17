@@ -22,13 +22,13 @@
             });
     };
 
-    $scope.spellDetail = function (spellurl) {
+    $scope.spellDetail = function (spell) {
         
-        spellurl = encodeURIComponent(spellurl);
+        spellurl = encodeURIComponent(spell.url);
         console.log("url passed in", spellurl);
         $http.get(`/api/spells/?spellurl=${spellurl}`)
            .then(function (result) {
-               $scope.spelldetail = result.data;
+               spell.spelldetail = result.data;
                console.log("spelldetail", $scope.spelldetail);
                console.log(result);
            });

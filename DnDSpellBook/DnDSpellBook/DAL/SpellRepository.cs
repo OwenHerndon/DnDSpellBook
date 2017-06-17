@@ -19,9 +19,14 @@ namespace DnDSpellBook.DAL
             _context = connection;
         }
 
-        public void AddSpellToCharacter(Spell characterSpell)
+        public void AddSpellToCharacter(int selectedCharacter, Spell characterSpell)
         {
-            _context.Spells.Add(characterSpell);
+            var character = _context.Characters.Find(selectedCharacter);
+            if(character.Spells == null)
+            {
+                character.Spells = new List<Spell>();
+            } 
+            character.Spells.Add(characterSpell);
             _context.SaveChanges();
         }
 

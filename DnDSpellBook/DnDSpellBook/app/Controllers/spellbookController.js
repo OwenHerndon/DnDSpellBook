@@ -39,10 +39,28 @@
     $scope.addSpellToCharacter = function (selectedCharacter, spelldetail) {
         console.log("Selected character Id to DB", selectedCharacter);
         console.log("Spell object to be added to DB", spelldetail);
-        //$http.post("/api/spells/addspelltocharacter",
-        //    {
-                
-        //    })
+        $http.post(`/api/spells/addspelltocharacter/${selectedCharacter}`, 
+            {
+                _id : spelldetail._id,
+                index : spelldetail.index,
+                name : spelldetail.name,
+                desc : spelldetail.desc,
+                page : spelldetail.page,
+                range : spelldetail.range,
+                components : spelldetail.components,
+                material : spelldetail.material,
+                ritual : spelldetail.ritual,
+                duration : spelldetail.duration,
+                concentration : spelldetail.concentration,
+                casting_time : spelldetail.casting_time,
+                level : spelldetail.level,
+                school : spelldetail.school,
+                classes : spelldetail.classes,
+                subclasses : spelldetail.subclasses,
+                url : spelldetail.url
+            }).then(function (result) {
+                console.log("spelladded", result);
+            });
     };
 
     $scope.getCharacters = function () {

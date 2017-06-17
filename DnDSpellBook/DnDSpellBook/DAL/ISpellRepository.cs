@@ -9,7 +9,7 @@ namespace DnDSpellBook.DAL
 {
     public interface ISpellRepository
     {
-        void AddSpellToCharacter(Spell characterSpell);
+        void AddSpellToCharacter(int selectedCharacter, Spell characterSpell);
 
         IEnumerable<Result> GetSpells(string selectedClass, string selectedLevel);
 

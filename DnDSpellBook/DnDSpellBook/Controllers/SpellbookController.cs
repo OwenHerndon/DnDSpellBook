@@ -14,10 +14,6 @@ namespace DnDSpellBook.Controllers
     {
         readonly ISpellRepository _spellRepository;
 
-        public SpellbookController()
-        {
-            _spellRepository = new SpellRepository();
-        }
 
         public SpellbookController(ISpellRepository spellRepository)
         {
@@ -37,10 +33,10 @@ namespace DnDSpellBook.Controllers
         }
 
 
-        [Route("api/spells/addspelltocharacter")]
-        public void PostSpellToCharacter(Spell spell)
+        [HttpPost, Route("api/spells/addspelltocharacter/{selectedCharacter}")]
+        public void PostSpellToCharacter(int selectedCharacter, Spell spell)
         {
-            _spellRepository.AddSpellToCharacter(spell);
+            _spellRepository.AddSpellToCharacter(selectedCharacter, spell);
         }
 
     }

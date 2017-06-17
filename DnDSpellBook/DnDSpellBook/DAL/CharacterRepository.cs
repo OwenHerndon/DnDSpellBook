@@ -22,21 +22,7 @@ namespace DnDSpellBook.DAL
 
         public IEnumerable<Spell> GetCharactersSpells(int Id)
         {
-            //returns all spells
-            //return _context.Spells;
-
-            //returns null spells
-            //var character = _context.Characters.Find(Id);
-            //return character.Spells;
-
             return _context.Spells.Where(x => x.Character_Id == Id);
-
-            //var spell = dataContext.dbset.Where(x => x.CustomerID == your_key).FirstOrDefault();
-            //var spells = _context.Characters.Include(c => c.Spells).Where(x => x.Character_Id == Id).FirstOrDefault(); ;
-            //return spells;
-
-            //var characerSpells = _context.Characters.First(s => s.Id == Id);
-            //Spell spellList = characerSpells.Spells.Character_Id;
         }
         
         public void DeleteCharacter(int Id)

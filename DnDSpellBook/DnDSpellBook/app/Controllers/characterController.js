@@ -8,6 +8,8 @@
 
     $scope.selectedCharacter = {};
 
+    $scope.selectedSpell = [];
+
    
     
     //gets list of characters
@@ -46,6 +48,12 @@
 
     };
 
+    //delete spell
+    $scope.deleteSpell = function (selectedSpellId) {
+        console.log("Spell Id to be deleted", selectedSpellId);
+    };
+
+    //deletes character
     $scope.deleteCharacter = function (selectedCharacterId) {
         console.log("SelectedcharId", selectedCharacterId);
         $http.delete(`/api/character/delete/${selectedCharacterId}`);

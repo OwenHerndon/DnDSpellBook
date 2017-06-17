@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -27,6 +29,12 @@ namespace DnDSpellBook.Models
         public List<Class> classes { get; set; }
         public List<Subclass> subclasses { get; set; }
         public string url { get; set; }
+
+        public int Character_Id { get; set; }
+
+        [ForeignKey("Character_Id")]
+        [JsonIgnore]
+        public virtual Character Character { get; set; }
     }
 
     public class School

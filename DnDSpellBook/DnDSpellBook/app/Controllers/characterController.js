@@ -22,12 +22,13 @@
 
     $scope.getCharacters();
 
-    //get character spells?
-    $scope.getCharactersSpells = function () {
-        $http.get(`/api/characters/spells`)
+    //get character spells
+    $scope.getCharacterSpells = function (selectedCharacterId) {
+        console.log(selectedCharacterId);
+        $http.get(`/api/characters/spells/${selectedCharacterId}`)
             .then(function (result) {
-                $scope.characters = result.data;
-                console.log("spells", $scope.characters);
+                $scope.charactersSpells = result.data;
+                console.log("spells returned", $scope.charactersSpells);
                 console.log(result);
             });
     };

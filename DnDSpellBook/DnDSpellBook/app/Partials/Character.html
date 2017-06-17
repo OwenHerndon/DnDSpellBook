@@ -7,13 +7,13 @@
 </div>
 
 <div>
-    <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="deleteCharacter(selectedCharacter)">Delete {{character.Name}}</button>
+    <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="deleteCharacter(selectedCharacter)">Delete</button>
     <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="addNew()">Add new character</button>
 </div>
 
 
 <div>
-    <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="getSpells()">Get {{character.Name}} Spells!</button>
+    <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="getCharacterSpells(selectedCharacter)">Get Spells!</button>
 </div>
 
 <div ng-model="spelldetail" class="col s4 flow-text">

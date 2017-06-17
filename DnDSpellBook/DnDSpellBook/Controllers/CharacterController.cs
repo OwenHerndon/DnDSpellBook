@@ -25,10 +25,10 @@ namespace DnDSpellBook.Controllers
         }
 
         //gets spells list of selected character
-        [HttpGet, Route("api/characters/spells")]
-        public IEnumerable<Spell> GetSpells()
+        [HttpGet, Route("api/characters/spells/{selectedCharacterId}")]
+        public IEnumerable<Spell> GetSpells(int selectedCharacterId)
         {
-            return _characterRepository.GetCharactersSpells();
+            return _characterRepository.GetCharactersSpells(selectedCharacterId);
         }
 
         [HttpDelete, Route("api/character/delete/{selectedCharacterId}")]

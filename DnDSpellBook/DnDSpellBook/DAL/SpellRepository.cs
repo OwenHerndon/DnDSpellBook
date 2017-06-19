@@ -58,7 +58,7 @@ namespace DnDSpellBook.DAL
 
             var restResponse = client.Get<List<Spell>>(request);
 
-            if (restResponse.StatusCode == HttpStatusCode.OK) yield return null;
+            //if (restResponse.StatusCode == HttpStatusCode.OK) yield return null;
 
             var settings = new JsonSerializerSettings
             {

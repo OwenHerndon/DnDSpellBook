@@ -1,6 +1,18 @@
-﻿<div>
-    <input type="text" id="username" ng-model="username" />
-    <input type="password" id="password" ng-model="password" />
-    <button class="btn-default" ng-click="login()">Sign In</button>
-    <a href="#!/signup">Sign Up!</a>
+﻿<div class="container">
+    <div class="row center-align">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input class="validate" placeholder="Email" type="text" id="username" ng-model="username" />
+                </div>
+                <div class="input-field col s12">
+                    <input class="validate" placeholder="Password" type="text" id="password" ng-model="password" />
+                </div>
+                <div class="row col s12">
+                    <button class="btn waves-effect waves-light red darken-4" ng-click="login()">Sign In</button>
+                    <button class="btn waves-effect waves-light red darken-4"><a href="#!/signup">Sign Up!</a></button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

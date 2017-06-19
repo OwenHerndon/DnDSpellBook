@@ -16,15 +16,15 @@ namespace DnDSpellBook
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            //          "~/Scripts/bootstrap.js",
+            //          "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
+                      //"~/Content/bootstrap.css",
                       "~/Content/css/materialize.min.css",
-                      "~/Content/css/materialize.css"));
+                      "~/Content/css/materialize.css",
+                      "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/materialize").Include(
                 "~/Content/js/materialize.js",

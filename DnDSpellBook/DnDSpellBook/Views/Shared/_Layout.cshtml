@@ -12,28 +12,24 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body ng-app="SpellBook">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("D&D SpellBook", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Character", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Logout", "Index", "Help", new { area = "" }, null)</li>
-                </ul>
-            </div>
+    <nav>
+        <div class="nav-wrapper grey darken-3">
+            <a href="#!/spellbook" class="brand-logo center">D&D Spellbook<i class="" aria-hidden="true"></i></a>
+            <a href="#" class="brand-logo"></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="https://github.com/OwenHerndon/DnDSpellBook">My Code</a></li>
+                <li><a href="#!/add">Add Character</a></li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#!/character">Characters</a></li>
+                <li><a href="#!">Logout</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer class="page-footer darken-4">
+        <footer class="page-footer center-align white">
             <p>Powered by <a href="http://www.dnd5eapi.co/">5th Edition API</a></p>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>

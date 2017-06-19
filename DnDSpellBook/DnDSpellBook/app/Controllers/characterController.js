@@ -49,8 +49,8 @@
     };
 
     //delete spell
-    $scope.deleteSpell = function (selectedSpellId) {
-        console.log("Spell Id to be deleted", selectedSpellId);
+    $scope.deleteSpell = function (characterSpell) {
+        console.log("Spell Id to be deleted", characterSpell);
     };
 
     //deletes character

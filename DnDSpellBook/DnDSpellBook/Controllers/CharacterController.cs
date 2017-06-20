@@ -37,6 +37,11 @@ namespace DnDSpellBook.Controllers
             _characterRepository.DeleteCharacter(selectedCharacterId);
         }
         
+        [HttpDelete, Route("api/character/spell/delete/{spellName}/{characterId}")]
+        public void DeleteSpell(string spellName, int characterId)
+        {
+            _characterRepository.DeleteSpell(spellName, characterId);
+        }
         //deletes spell from list
 
         //deletes character from db

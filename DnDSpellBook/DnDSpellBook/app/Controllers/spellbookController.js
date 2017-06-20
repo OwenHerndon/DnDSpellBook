@@ -12,6 +12,8 @@
 
     $scope.selectedCharacter = [];
 
+    $scope.cardDetail = [];
+
     $scope.getSpells = function (selectedClass, selectedLevel) {
 
         $http.get(`/api/spells/${selectedClass}/${selectedLevel}`)
@@ -22,10 +24,12 @@
             });
     };
 
-    $scope.spellDetail = function (spell) {
+    $scope.spellDetail = function (spell, $index) {
         
         spellurl = encodeURIComponent(spell.url);
         console.log("url passed in", spellurl);
+        console.log("$index", $index);
+        $scope.cardDetail[$index] = true;
         $http.get(`/api/spells/?spellurl=${spellurl}`)
            .then(function (result) {
                spell.spelldetail = result.data;

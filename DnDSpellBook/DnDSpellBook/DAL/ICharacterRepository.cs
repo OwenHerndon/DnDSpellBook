@@ -14,5 +14,7 @@ namespace DnDSpellBook.DAL
         IEnumerable<Spell> GetCharactersSpells(int Id);
 
         void DeleteCharacter(int Id);
+
+        void DeleteSpell(string spellName, int Id);
     }
 }

@@ -49,13 +49,18 @@
     };
 
     //delete spell
-    $scope.deleteSpell = function (characterSpell) {
-        console.log("Spell Id to be deleted", characterSpell);
+    $scope.deleteSpell = function (spellName, characterId) {
+        console.log("Spell to be deleted", spellName);
+        console.log("characterID", characterId);
+        $http.delete(`/api/character/spell/delete/${spellName}/${characterId}`)
+            .then(function () {
+                $scope.getCharacterSpells(characterId);
+            });
     };
 
     //deletes character
     $scope.deleteCharacter = function (selectedCharacterId) {
         console.log("SelectedcharId", selectedCharacterId);
-        $http.delete(`/api/character/delete/${selectedCharacterId}`);
+        $http.delete(`/api/character/delete/${selectedCharacterId}`)
     };
 }]);

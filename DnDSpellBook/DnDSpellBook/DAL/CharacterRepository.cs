@@ -31,5 +31,16 @@ namespace DnDSpellBook.DAL
             _context.SaveChanges();
 
         }
+
+        public void DeleteSpell(string spellName, int Id)
+        {
+            var spell =_context.Spells.FirstOrDefault(p => p.name == spellName && p.Character_Id == Id);
+
+            if (spell != null)
+            {
+                _context.Spells.Remove(spell);
+                _context.SaveChanges();
+            }
+        }
     }
 }

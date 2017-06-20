@@ -12,31 +12,36 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body ng-app="SpellBook">
-    <nav>
-        <div class="nav-wrapper grey darken-3">
-            <a href="#!/spellbook" class="brand-logo center">D&D Spellbook<i class="" aria-hidden="true"></i></a>
-            <a href="#" class="brand-logo"></a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="https://github.com/OwenHerndon/DnDSpellBook">My Code</a></li>
-                <li><a href="#!/add">Add Character</a></li>
-            </ul>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#!/character">Characters</a></li>
-                <li><a href="#!">Logout</a></li>
-            </ul>
+    <div class="site">
+        <nav>
+            <div class="nav-wrapper grey darken-3">
+                <a href="#!/spellbook" class="brand-logo center">D&D Spellbook<i class="" aria-hidden="true"></i></a>
+                <a href="#" class="brand-logo"></a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="https://github.com/OwenHerndon/DnDSpellBook">My Code</a></li>
+                    <li><a href="#!/add">Add Character</a></li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#!/character">Characters</a></li>
+                    <li><a href="#!">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
+        </main>
         <footer class="page-footer center-align white">
             <p>Powered by <a href="http://www.dnd5eapi.co/">5th Edition API</a></p>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-    </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~bundles/materialize")
-    @Scripts.Render("~/bundles/angular")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~bundles/materialize")
+        @Scripts.Render("~/bundles/angular")
+        @Styles.Render("~/bundles/Content/fontawesome")
+        @RenderSection("scripts", required: false)
+</div>
 </body>
 </html>

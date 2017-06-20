@@ -1,5 +1,4 @@
 ﻿body {
-    padding-bottom: 20px;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -23,7 +22,17 @@ textarea {
 }
 
 .input-field input[type=text]:focus {
-     color : red;
+     color : darkred;
      border-bottom: 1px solid #000;
      box-shadow: 0 1px 0 0 #000;
    }
+
+.input-field input[type=password]:focus {
+     color : darkred;
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
+.card{
+    background: #fdf1dd;
+}

@@ -24,6 +24,7 @@ namespace DnDSpellBook
                       //"~/Content/bootstrap.css",
                       "~/Content/css/materialize.min.css",
                       "~/Content/css/materialize.css",
+                      "~/Content/font-awesome.min.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/materialize").Include(

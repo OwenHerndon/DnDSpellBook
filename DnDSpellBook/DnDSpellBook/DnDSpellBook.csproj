@@ -300,6 +300,10 @@
     <Compile Include="Migrations\201706171557392_foreignkey.Designer.cs">
       <DependentUpon>201706171557392_foreignkey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706200216387_removedmodels.cs" />
+    <Compile Include="Migrations\201706200216387_removedmodels.Designer.cs">
+      <DependentUpon>201706200216387_removedmodels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -329,6 +333,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\materialize.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\js\materialize.js" />
     <Content Include="Content\css\materialize.min.css" />
     <Content Include="Content\js\materialize.min.js" />
@@ -426,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706171557392_foreignkey.resx">
       <DependentUpon>201706171557392_foreignkey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706200216387_removedmodels.resx">
+      <DependentUpon>201706200216387_removedmodels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

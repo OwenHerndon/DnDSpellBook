@@ -4,10 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-    <link href="~/Content/css/materialize.min.css" rel="stylesheet"
-          type="text/css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -38,9 +34,8 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
         @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~bundles/materialize")
+        @Scripts.Render("~/bundles/materialize")
         @Scripts.Render("~/bundles/angular")
-        @Styles.Render("~/bundles/Content/fontawesome")
         @RenderSection("scripts", required: false)
 </div>
 </body>

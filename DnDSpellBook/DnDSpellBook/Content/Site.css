@@ -33,6 +33,10 @@ textarea {
      box-shadow: 0 1px 0 0 #000;
    }
 
+.top{
+    padding-top : 2em;
+}
+
 .card{
     background: #fdf1dd;
     color: #781e0d;

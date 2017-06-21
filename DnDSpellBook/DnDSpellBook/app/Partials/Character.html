@@ -1,19 +1,18 @@
-﻿<div class="center-align">
+﻿<div class="container center-align">
     <div class="row">
-        <div class="col s6">
-            <select class='dropdown-button btn red darken-4 white-text' ng-model="selectedCharacter">
+        <div class="top">
+            <select class='dropdown-button btn red darken-4 white-text col s4 offset-s4' ng-model="selectedCharacter">
                 <option value='' disabled selected>Choose a Character</option>
                 <option ng-repeat="character in characters" value="{{character.Id}}">{{character.Name}}</option>
             </select>
-        </div>
-
-        <div  class="col s1">
-            <button class="btn-floating btn  red darken-4 fa fa-trash-o" ng-click="deleteCharacter(selectedCharacter)"></button>
+            <div class="col s2">
+                <button class="btn-floating btn  red darken-4 fa fa-trash-o" ng-click="deleteCharacter(selectedCharacter)"></button>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col s12">
-            <button class="btn btn-primary btn-lg col s2 red darken-4" ng-click="getCharacterSpells(selectedCharacter)">Get Spells!</button>
+    <div class="row center-align">
+        <div class="">
+            <button class="btn btn-primary btn-lg red darken-4" ng-click="getCharacterSpells(selectedCharacter)">Get Spells!</button>
         </div>
     </div>
 </div>

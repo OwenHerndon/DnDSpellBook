@@ -33,7 +33,7 @@
                $scope.spells[$index].spelldetail = result.data;
                //$scope.spell.spelldetail.desc = $scope.spell.spelldetail.desc.join();
                //$scope.spell.spelldetail.components = $scope.spell.spelldetail.components.join();
-               console.log("$scope.spell.spelldetail", $scope.spell.spelldetail);
+               //console.log("$scope.spell.spelldetail", $scope.spell.spelldetail);
            });
 
     };

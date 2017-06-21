@@ -4,8 +4,6 @@
 
     $scope.charactersSpells = [];
 
-    $scope.spelldetail = {};
-
     $scope.selectedCharacter = {};
 
     $scope.selectedSpell = [];
@@ -42,8 +40,8 @@
         $scope.cardDetail[$index] = true;
         $http.get(`/api/spells/?spellurl=${spellurl}`)
            .then(function (result) {
-               characterSpell.spelldetail = result.data;
-               console.log("spelldetail", characterSpell.spelldetail);
+               $scope.charactersSpells[$index].spelldetail = result.data;
+               //console.log("spelldetail", characterSpell.spelldetail);
                console.log(result);
            });
 

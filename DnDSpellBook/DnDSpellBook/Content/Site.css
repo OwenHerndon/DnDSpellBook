@@ -35,4 +35,10 @@ textarea {
 
 .card{
     background: #fdf1dd;
+    color: #781e0d;
 }
+
+select > option:hover{
+                box-shadow: 0 0 10px 100px #FED20F inset;
+                transition: all .2s ease-in-out;
+            }

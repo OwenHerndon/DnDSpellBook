@@ -20,28 +20,30 @@
 
 <div>
     <div ng-repeat="charactersSpell in charactersSpells" class="col s4 flow-text">
-        <div class="card">
-            <div  class="center-align" ng-click="spellDetail(charactersSpell)">{{charactersSpell.name}}</div>
-            <div ng-model="spelldetail" class="col s4 flow-text">
-                <div class="">
-                    <div class="card col s8 offset-s2">
-                        <div>{{charactersSpell.spelldetail.desc}}</div>
-                        <div>{{charactersSpell.spelldetail.higher_level}}</div>
-                        <div>{{charactersSpell.spelldetail.page}}</div>
-                        <div>{{charactersSpell.spelldetail.range}}</div>
-                        <div>{{charactersSpell.spelldetail.components}}</div>
-                        <div>{{charactersSpell.spelldetail.material}}</div>
-                        <div>{{charactersSpell.spelldetail.ritual}}</div>
-                        <div>{{charactersSpell.spelldetail.duration}}</div>
-                        <div>{{charactersSpell.spelldetail.concentration}}</div>
-                        <div>{{charactersSpell.spelldetail.casting_time}}</div>
-                        <div>{{charactersSpell.spelldetial.school}}</div>
-                        <div class="card-action center-align">
-                            <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="deleteSpell(charactersSpell.spelldetail.name, selectedCharacter)">Unlearn Spell</button>
+        <div class="">
+            <div  class="center-align" ng-click="spellDetail(charactersSpell, $index)">{{charactersSpell.name}}</div>
+            <div class="row">
+                <div class="col s8 offset-s2">
+                    <div class="card" ng-show="cardDetail[$index]">
+                        <div ng-model="spelldetail">
+                            <div>{{charactersSpell.spelldetail.desc}}</div>
+                            <div>{{charactersSpell.spelldetail.higher_level}}</div>
+                            <div>{{charactersSpell.spelldetail.page}}</div>
+                            <div>{{charactersSpell.spelldetail.range}}</div>
+                            <div>{{charactersSpell.spelldetail.components}}</div>
+                            <div>{{charactersSpell.spelldetail.material}}</div>
+                            <div>{{charactersSpell.spelldetail.ritual}}</div>
+                            <div>{{charactersSpell.spelldetail.duration}}</div>
+                            <div>{{charactersSpell.spelldetail.concentration}}</div>
+                            <div>{{charactersSpell.spelldetail.casting_time}}</div>
+                            <div>{{charactersSpell.spelldetial.school}}</div>
+                            <div class="card-action center-align">
+                                <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="deleteSpell(charactersSpell.spelldetail.name, selectedCharacter)">Unlearn Spell</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
         </div>
     </div>
 </div>

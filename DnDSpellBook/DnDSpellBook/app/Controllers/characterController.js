@@ -10,7 +10,7 @@
 
     $scope.selectedSpell = [];
 
-   
+    $scope.cardDetail = [];
     
     //gets list of characters
     $scope.getCharacters = function () {
@@ -36,9 +36,10 @@
     };
 
     //gets spell detail
-    $scope.spellDetail = function (characterSpell) {
+    $scope.spellDetail = function (characterSpell, $index) {
         spellurl = encodeURIComponent(characterSpell.url);
         console.log("url passed in", spellurl);
+        $scope.cardDetail[$index] = true;
         $http.get(`/api/spells/?spellurl=${spellurl}`)
            .then(function (result) {
                characterSpell.spelldetail = result.data;

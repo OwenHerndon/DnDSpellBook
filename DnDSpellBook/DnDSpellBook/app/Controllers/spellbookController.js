@@ -8,8 +8,6 @@
 
     $scope.spells = [];
 
-    $scope.spelldetail = {};
-
     $scope.selectedCharacter = [];
 
     $scope.cardDetail = [];
@@ -19,8 +17,8 @@
         $http.get(`/api/spells/${selectedClass}/${selectedLevel}`)
             .then(function (result) {
                 $scope.spells = result.data;
-                console.log("spells",$scope.spells);
-                console.log(result);
+                //console.log("spells",$scope.spells);
+                //console.log(result);
             });
     };
 
@@ -32,9 +30,10 @@
         $scope.cardDetail[$index] = true;
         $http.get(`/api/spells/?spellurl=${spellurl}`)
            .then(function (result) {
-               spell.spelldetail = result.data;
-               console.log("spelldetail", $scope.spelldetail);
-               console.log(result);
+               $scope.spells[$index].spelldetail = result.data;
+               //$scope.spell.spelldetail.desc = $scope.spell.spelldetail.desc.join();
+               //$scope.spell.spelldetail.components = $scope.spell.spelldetail.components.join();
+               console.log("$scope.spell.spelldetail", $scope.spell.spelldetail);
            });
 
     };
@@ -71,8 +70,8 @@
         $http.get(`/api/characters`)
             .then(function (result) {
                 $scope.characters = result.data;
-                console.log("characters", $scope.characters);
-                console.log(result);
+                //console.log("characters", $scope.characters);
+                //console.log(result);
             });
     };
 

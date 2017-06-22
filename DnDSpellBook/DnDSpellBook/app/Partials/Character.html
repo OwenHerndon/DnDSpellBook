@@ -1,0 +1,47 @@
+﻿<div class="center-align">
+    <div class="row">
+        <div class="col s6">
+            <select class='dropdown-button btn red darken-4 white-text' ng-model="selectedCharacter">
+                <option value='' disabled selected>Choose a Character</option>
+                <option ng-repeat="character in characters" value="{{character.Id}}">{{character.Name}}</option>
+            </select>
+        </div>
+
+        <div  class="col s1">
+            <button class="btn-floating btn  red darken-4 fa fa-trash-o" ng-click="deleteCharacter(selectedCharacter)"></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <button class="btn btn-primary btn-lg col s2 red darken-4" ng-click="getCharacterSpells(selectedCharacter)">Get Spells!</button>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div ng-repeat="charactersSpell in charactersSpells" class="col s4 flow-text">
+        <div class="card">
+            <div  class="center-align" ng-click="spellDetail(charactersSpell)">{{charactersSpell.name}}</div>
+            <div ng-model="spelldetail" class="col s4 flow-text">
+                <div class="">
+                    <div class="card col s8 offset-s2">
+                        <div>{{charactersSpell.spelldetail.desc}}</div>
+                        <div>{{charactersSpell.spelldetail.higher_level}}</div>
+                        <div>{{charactersSpell.spelldetail.page}}</div>
+                        <div>{{charactersSpell.spelldetail.range}}</div>
+                        <div>{{charactersSpell.spelldetail.components}}</div>
+                        <div>{{charactersSpell.spelldetail.material}}</div>
+                        <div>{{charactersSpell.spelldetail.ritual}}</div>
+                        <div>{{charactersSpell.spelldetail.duration}}</div>
+                        <div>{{charactersSpell.spelldetail.concentration}}</div>
+                        <div>{{charactersSpell.spelldetail.casting_time}}</div>
+                        <div>{{charactersSpell.spelldetial.school}}</div>
+                        <div class="card-action center-align">
+                            <button class="btn btn-primary btn-lg col-xs-4 red darken-4" ng-click="deleteSpell(charactersSpell.spelldetail.name, selectedCharacter)">Unlearn Spell</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,6 +13,21 @@ app.config([
                 templateUrl: "app/Partials/Spellbook.html",
                 controller: "spellbookController"
             })
+            .when("/spelldetail",
+            {
+                templateUrl: "app/Partials/spelldetail.html",
+                controller: "spellbookController"
+            })
+            .when("/character",
+            {
+                templateUrl: "app/Partials/Character.html",
+                controller: "characterController"
+            })
+            .when("/add",
+            {
+                templateUrl: "app/Partials/AddCharacter.html",
+                controller: "addCharacterController"
+            })
             .when("/signup",
             {
                 templateUrl: "app/Partials/SignUp.html",
@@ -20,7 +35,7 @@ app.config([
             });
 
     }
-])
+]);
 
 app.run(["$http", function ($http) {
 

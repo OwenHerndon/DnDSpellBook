@@ -16,18 +16,25 @@ namespace DnDSpellBook
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            //          "~/Scripts/bootstrap.js",
+            //          "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/font-awesome-4.7.0/css/font-awesome.css",
+                      "~/Content/css/materialize.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/materialize").Include(
+                "~/Content/js/materialize.js",
+                "~/Content/js/materialize.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
-                "~/app/app.js")
+                "~/app/app.js",
+                "~/app/Factory/SpellFactory.js",
+                "~/app/Controllers/spellbookController.js")
                 .IncludeDirectory("~/app", "*.js", true));
         }
     }

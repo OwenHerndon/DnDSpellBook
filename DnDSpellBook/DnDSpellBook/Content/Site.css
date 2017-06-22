@@ -1,7 +1,12 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
+
+main {
+    flex: 1 0 auto;
+  }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -14,4 +19,20 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.input-field input[type=text]:focus {
+     color : darkred;
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
+.input-field input[type=password]:focus {
+     color : darkred;
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
+.card{
+    background: #fdf1dd;
 }

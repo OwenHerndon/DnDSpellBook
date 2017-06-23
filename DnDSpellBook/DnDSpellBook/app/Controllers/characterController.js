@@ -37,7 +37,11 @@
     $scope.spellDetail = function (characterSpell, $index) {
         spellurl = encodeURIComponent(characterSpell.url);
         console.log("url passed in", spellurl);
-        $scope.cardDetail[$index] = true;
+        if ($scope.cardDetail[$index] == true) {
+            $scope.cardDetail[$index] = false;
+        } else {
+            $scope.cardDetail[$index] = true;
+        }
         $http.get(`/api/spells/?spellurl=${spellurl}`)
            .then(function (result) {
                $scope.charactersSpells[$index].spelldetail = result.data;

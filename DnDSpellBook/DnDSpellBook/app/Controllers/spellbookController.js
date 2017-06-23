@@ -27,13 +27,14 @@
         spellurl = encodeURIComponent(spell.url);
         console.log("url passed in", spellurl);
         console.log("$index", $index);
-        $scope.cardDetail[$index] = true;
+        if ($scope.cardDetail[$index] == true) {
+            $scope.cardDetail[$index] = false;
+        } else {
+            $scope.cardDetail[$index] = true;
+        }
         $http.get(`/api/spells/?spellurl=${spellurl}`)
            .then(function (result) {
                $scope.spells[$index].spelldetail = result.data;
-               //$scope.spell.spelldetail.desc = $scope.spell.spelldetail.desc.join();
-               //$scope.spell.spelldetail.components = $scope.spell.spelldetail.components.join();
-               //console.log("$scope.spell.spelldetail", $scope.spell.spelldetail);
            });
 
     };
